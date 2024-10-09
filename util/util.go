@@ -2,7 +2,7 @@ package util
 
 import (
 	"errors"
-	"regexp"
+	"unicode"
 )
 
 func CheckBase(number string , base int)(error){
@@ -10,12 +10,23 @@ func CheckBase(number string , base int)(error){
 		return errors.New("invalid Base")
 	}
 
-	regex := regexp.MustCompile(`^[0-6]+$`)
-
-	if(!regex.MatchString(number)){
-		return errors.New("invalid char")
+	number_base := 1
+	for _ ,digit := range number{
+		if '0' <= digit && digit <= '9' {
+			number_base = max(int(digit) - '0' , number_base)
+		}else if 'a' <= unicode.ToLower(digit) && unicode.ToLower(digit) <= 'z'{
+			number_base = max(int(unicode.ToLower(digit)) - 'a' + 10 , number_base)
+		}else{
+			return errors.New("invalid Number")
+		}
 	}
-
 	
 	return nil 
+}
+
+func max(a , b int)int{
+	if(a > b){
+		return a
+	}
+	return b
 }
