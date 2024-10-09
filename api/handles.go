@@ -1,8 +1,7 @@
 package api
 
 import (
-	"base-convertor/util"
-	"fmt"
+	"base-convertor/convertor"
 	"net/http"
 	"strconv"
 
@@ -13,10 +12,22 @@ import (
 func convertBaseHandler(c echo.Context) error{
 	number := c.QueryParam("num")
 	curBase:= c.QueryParam("curBase")
-	newBase:= c.QueryParam("newBase")
+	//newBase:= c.QueryParam("newBase")
 
-	curBaseNum , _ := strconv.Atoi(curBase)
-	err := util.CheckBase(number, curBaseNum)
-	fmt.Println(curBaseNum , err)
-	return c.String(http.StatusAccepted , number + " " + curBase + "->" + newBase)
+	curBaseNum , err := strconv.Atoi(curBase)
+	if err != nil {
+		return c.String(http.StatusBadRequest , err.Error())
+	}
+
+	numIsOk , err := convertor.CheckBase(number, curBaseNum)
+	if err != nil {
+		return c.String(http.StatusBadRequest , err.Error())
+	}
+	if !numIsOk {
+		return c.String(http.StatusBadRequest , "base dosen't match with number")
+	}
+
+	resultNum , err := convertor.ToDecimal(number,curBaseNum)
+
+	return c.String(http.StatusAccepted ,strconv.Itoa(resultNum))
 }
