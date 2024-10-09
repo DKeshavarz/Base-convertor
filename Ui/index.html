@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Convertor</title>
+</head>
+<body>
+    <div class="wrapper">
+       <h1>Base Converter – Convert a 
+        Number to Any Base</h1> 
+        <h4>Convert a number from any base to another. </h4>
+        <div class="convertor">
+            <label for="Number">Number:</label>
+            <p></p>
+            <input type="text" id="Number">
+            <div class="select-wrapper">
+                <label for="FBase">From Base:</label>
+                <p></p>
+                <select name="FBase" id="FBase">
+                    <option value="2">2 (binary)</option> 
+                    <option value="3">3 (ternary)</option> 
+                    <option value="4">4 (quaternary)</option> 
+                    <option value="5">5 (quinary)</option> 
+                    <option value="6">6 (senary)</option> 
+                    <option value="7">7 (septenary)</option> 
+                    <option value="8">8 (octal)</option> 
+                    <option value="9">9 (nonary)</option> 
+                    <option value="10" selected="selected">10 (decimal)</option> 
+                    <option value="11">11 (undecimal)</option> 
+                    <option value="12">12 (duodecimal)</option> 
+                    <option value="13">13 (tridecimal)</option> 
+                    <option value="14">14 (tetradecimal)</option> 
+                    <option value="15">15 (pentadecimal)</option> 
+                    <option value="16">16 (hexadecimal)</option> 
+                    <option value="17">17 (heptadecimal)</option> 
+                    <option value="18">18 (octodecimal)</option> 
+                    <option value="19">19 (enneadecimal)</option> 
+                    <option value="20">20 (vigesimal)</option> 
+                    <option value="21">21 (unvigesimal)</option> 
+                    <option value="22">22 (duovigesimal)</option> 
+                    <option value="23">23 (trivigesimal)</option> 
+                    <option value="24">24 (tetravigesimal)</option> 
+                    <option value="25">25 (pentavigesimal)</option> 
+                    <option value="26">26 (hexavigesimal)</option> 
+                    <option value="27">27 (heptavigesimal)</option> 
+                    <option value="28">28 (octovigesimal)</option> 
+                    <option value="29">29 (enneavigesimal)</option> 
+                    <option value="30">30 (trigesimal)</option> 
+                    <option value="31">31 (untrigesimal)</option> 
+                    <option value="32">32 (duotrigesimal)</option> 
+                    <option value="33">33 (tritrigesimal)</option> 
+                    <option value="34">34 (tetratrigesimal)</option> 
+                    <option value="35">35 (pentatrigesimal)</option> 
+                    <option value="36">36 (hexatrigesimal)</option> 
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <label for="TBase">To Base:</label>
+                <p></p>
+                <select name="TBase" id="TBase">
+                    <option value="2" selected="selected">2 (binary)</option> 
+                    <option value="3">3 (ternary)</option> 
+                    <option value="4">4 (quaternary)</option> 
+                    <option value="5">5 (quinary)</option> 
+                    <option value="6">6 (senary)</option> 
+                    <option value="7">7 (septenary)</option> 
+                    <option value="8">8 (octal)</option> 
+                    <option value="9">9 (nonary)</option> 
+                    <option value="10">10 (decimal)</option> 
+                    <option value="11">11 (undecimal)</option> 
+                    <option value="12">12 (duodecimal)</option> 
+                    <option value="13">13 (tridecimal)</option> 
+                    <option value="14">14 (tetradecimal)</option> 
+                    <option value="15">15 (pentadecimal)</option> 
+                    <option value="16">16 (hexadecimal)</option> 
+                    <option value="17">17 (heptadecimal)</option> 
+                    <option value="18">18 (octodecimal)</option> 
+                    <option value="19">19 (enneadecimal)</option> 
+                    <option value="20">20 (vigesimal)</option> 
+                    <option value="21">21 (unvigesimal)</option> 
+                    <option value="22">22 (duovigesimal)</option> 
+                    <option value="23">23 (trivigesimal)</option> 
+                    <option value="24">24 (tetravigesimal)</option> 
+                    <option value="25">25 (pentavigesimal)</option> 
+                    <option value="26">26 (hexavigesimal)</option> 
+                    <option value="27">27 (heptavigesimal)</option> 
+                    <option value="28">28 (octovigesimal)</option> 
+                    <option value="29">29 (enneavigesimal)</option> 
+                    <option value="30">30 (trigesimal)</option> 
+                    <option value="31">31 (untrigesimal)</option> 
+                    <option value="32">32 (duotrigesimal)</option> 
+                    <option value="33">33 (tritrigesimal)</option> 
+                    <option value="34">34 (tetratrigesimal)</option> 
+                    <option value="35">35 (pentatrigesimal)</option> 
+                    <option value="36">36 (hexatrigesimal)</option> 
+                </select>
+            </div>
+            <button id="calculator" onclick="calculate()">calculate</button>
+            <div id="result">
+                <p>Result:</p>
+                <input type="text" id="result-text">
+            </div>
+        </div>
+    </div>
+
+    <script src="./front.js"></script>
+</body>
+</html>

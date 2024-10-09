@@ -1,6 +1,8 @@
 package api
 
-import "github.com/labstack/echo/v4"
+import ("github.com/labstack/echo/v4"
+"github.com/labstack/echo/v4/middleware"
+)
 
 type Server struct{
 	Server    *echo.Echo
@@ -16,6 +18,14 @@ func NewServer() (s *Server){
 
 func (s *Server) StartServer()error{
 	//here we set handles
+
+	s.Server.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+        AllowOrigins: []string{"*"},
+        AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
+        AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+    }))
+
+
 	s.Server.GET("/convert-base", convertBaseHandler)
 	err := s.Server.Start(s.ListenAdr)
 	return err
