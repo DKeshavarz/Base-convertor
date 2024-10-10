@@ -26,9 +26,13 @@ func (s *Server) StartServer()error{
         AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
     }))
 
+	
+
+
 	s.Server.Static("/" , "Ui")
 
 	s.Server.GET("/convert-base", convertBaseHandler)
+	s.Server.GET("/test" , Check)
 	err := s.Server.Start(s.ListenAdr)
 	return err
 }

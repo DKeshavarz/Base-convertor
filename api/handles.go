@@ -28,6 +28,12 @@ func convertBaseHandler(c echo.Context) error{
 	}
 
 	resultNum , err := convertor.ToDecimal(number,curBaseNum)
-
+	if err != nil {
+		return c.String(http.StatusBadRequest , err.Error())
+	}
 	return c.String(http.StatusAccepted ,strconv.Itoa(resultNum))
+}
+
+func Check(c echo.Context)error{
+	return c.String(http.StatusAccepted , "OK ..")
 }
