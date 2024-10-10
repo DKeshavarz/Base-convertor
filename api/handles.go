@@ -12,7 +12,7 @@ import (
 func convertBaseHandler(c echo.Context) error{
 	number := c.QueryParam("num")
 	curBase:= c.QueryParam("curBase")
-	//newBase:= c.QueryParam("newBase")
+	newBase:= c.QueryParam("newBase")
 
 	curBaseNum , err := strconv.Atoi(curBase)
 	if err != nil {
@@ -31,7 +31,19 @@ func convertBaseHandler(c echo.Context) error{
 	if err != nil {
 		return c.String(http.StatusBadRequest , err.Error())
 	}
-	return c.String(http.StatusAccepted ,strconv.Itoa(resultNum))
+
+	newBaseNum , err := strconv.Atoi(newBase)
+	if err != nil {
+		return c.String(http.StatusBadRequest , err.Error())
+	}
+	
+	resultStr , err := convertor.FromDecimal(resultNum,newBaseNum)
+	if err != nil {
+		return c.String(http.StatusBadRequest , err.Error())
+	}
+
+
+	return c.String(http.StatusAccepted ,resultStr)
 }
 
 func Check(c echo.Context)error{

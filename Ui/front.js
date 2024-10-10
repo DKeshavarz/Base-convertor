@@ -13,6 +13,7 @@ async function sendQuery(num, curBase, newBase)
     let res = document.getElementById("result-text")
 
     const baseUrl = 'https://base-convertor.liara.run/convert-base'
+    //const baseUrl =   'http://localhost:8000/convert-base'
     const params = new URLSearchParams({
         num: num,
         curBase: curBase,
