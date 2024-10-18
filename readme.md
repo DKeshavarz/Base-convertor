@@ -3,7 +3,7 @@
 ## Project Overview
 In our Microprocessor course, my friend Arya Nadery and I, Daniel Keshavarz, developed a web application that converts numbers between different bases. This project allowed us to apply our knowledge of both back-end and front-end technologies effectively.
 
----
+
 
 ## Project Description
 ### Purpose
@@ -14,7 +14,7 @@ The primary goal of the project was to create a tool that facilitates the conver
 - **Front-End:** JavaScript
 - **Web Technologies:** HTML, CSS
 
----
+
 
 ## Development Process
 
@@ -34,7 +34,6 @@ The primary goal of the project was to create a tool that facilitates the conver
 - Implemented calls to communicate with the back-end API
 
 
----
 
 ## Challenges Faced
 - **Base Conversion Logic:** Ensuring accurate conversions between bases proved challenging. We had to account for edge cases and validate user inputs correctly.
@@ -42,7 +41,7 @@ The primary goal of the project was to create a tool that facilitates the conver
 
 - **deployment process:** To deploy your code in Liara using Docker, just package your app into a Docker image and push it to Liara's container registry. With a simple command, your application will be live and ready to scale! 
 
----
+
 
 ## Conclusion
 This project not only enhanced our programming skills but also taught us the importance of collaboration and effective communication during the development process. We successfully created a functional website that serves as a base conversion tool, fulfilling the course requirements and providing a practical utility.
@@ -53,6 +52,11 @@ This project not only enhanced our programming skills but also taught us the imp
 
 ## Acknowledgments
 Special thanks to our instructor for guidance and our peers for their feedback during the various stages of the project.
+
+
+## Repository & Live Site
+- **GitHub Repository:** https://github.com/DKeshavarz/Base-convertor 📦
+- **Website Address:** https://base-convertor.liara.run/ 🌐
 
 ---
 
